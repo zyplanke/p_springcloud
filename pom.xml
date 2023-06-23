@@ -50,6 +50,23 @@
             </exclusions>
         </dependency>
         <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>${springcloudalibaba.version}</version>
+            <exclusions>
+                <exclusion>
+                    <!-- nacos-client2.0.4版本存在官方github上的#6999及#10385号Bug； nacos-client2.2.1版本存在当配置中心配置变化后客户端AsyncAppender进程数不断增加Bug -->
+                    <groupId>com.alibaba.nacos</groupId>
+                    <artifactId>nacos-client</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+            <version>${springcloud.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-client</artifactId>
             <version>2.1.1</version>
